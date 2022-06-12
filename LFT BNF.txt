@@ -1,0 +1,57 @@
+BNF:
+
+6 reguli:
+
+<Cifra> ::= "0" | "1" | "3" | "8"
+<Litera> ::= "T" | "u" | "t" | "i" | "a" | "n" | "R" | "o" | "b" | "e" | "r" | "C" | "s" | "B"
+<Cuvant> ::= <Litera> | <Litera> <Cuvant>
+<Spatiu> ::= " " | " " <Spatiu>
+<Simbol> ::= "-"
+<Expresie> ::= <Cuvant> <Spatiu> <Cuvant> <Simbol> <Cuvant> <Spatiu> <Simbol> <Spatiu> <Cifra> <Cifra> <Cifra> <Cifra> <Litera>
+
+
+3 reguli:
+
+<Nume> ::= "T" "u" "t" "u" "i" "a" "n" "u" " " "R" "o" "b" "e" "r" "t" "-" "C" "o" "n" "s" "t" "a" "n" "t" "i" "n"
+<Grupa> ::= "1" "3" "0" "8" "B"
+<Expresie> ::= <Nume> " " "-" " " <Grupa>
+
+
+
+EBNF:
+
+6 reguli:
+
+Cifra = "0" | "1" | "3" | "8";
+Litera = "T" | "u" | "t" | "i" | "a" | "n" | "R" | "o" | "b" | "e" | "r" | "C" | "s" | "B";
+Cuvant = Litera, {Litera};
+Spatiu = " " | " " Spatiu;
+Simbol = "-";
+Expresie = Cuvant Spatiu Cuvant Simbol Cuvant Spatiu Simbol Spatiu Cifra Cifra Cifra Cifra Litera;
+
+
+3 reguli:
+
+Nume = "T" "u" "t" "u" "i" "a" "n" "u" " " "R" "o" "b" "e" "r" "t" "-" "C" "o" "n" "s" "t" "a" "n" "t" "i" "n";
+Grupa = "1" "3" "0" "8" "B";
+Expresie = Nume " " "-" " " Grupa;
+
+
+ABNF:
+
+6 reguli:
+
+Grupa = "1"."3"."0"."8"."B"
+Nume = "T"."u"."t"."u"."i"."a"."n"."u"
+Prenume1 = "R"."o"."b"."e"."r"."t"
+Prenume2 = "C"."o"."n"."s"."t"."a"."n"."t"."i"."n"
+Spatiu = " "
+Simbol = "-"
+Expresie = Nume.Spatiu.Prenume1.Simbol.Prenume2.Spatiu.Simbol.Spatiu.Grupa
+
+
+3 reguli:
+
+Nume = "T"."u"."t"."u"."i"."a"."n"."u"." "."R"."o"."b"."e"."r"."t"."-"."C"."o"."n"."s"."t"."a"."n"."t"."i"."n"
+Grupa = "1"."3"."0"."8"."B"
+Expresie = Nume." "."-"." ".Grupa;
